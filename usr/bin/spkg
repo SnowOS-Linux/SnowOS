@@ -1,0 +1,83 @@
+#!/bin/bash
+
+# Copyright (c) 2026 SnowOS team and bangkkuser
+# All rights reserved.
+#
+# This is free software
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+#
+
+SPKG_VER="1.0"
+
+if [ -z "$1" ]; then
+    echo "spkg: Why is the command?"
+    echo "See spkg help for more information"
+    exit 2
+fi
+
+case "$1" in
+	install|i|in|ins)
+	 apt install "${@:2}"
+	  ;;
+	remove|rm|uninstall|uni|unin|unins)
+	 apt remove "${@:2}"
+	  ;;
+	autoremove|autorm|arm)
+	 apt autoremove "${@:2}"
+	  ;;
+	*--dry-run*|*dry-run*|*-s*|*-simulate*)
+	 echo "E: This command is not available on your SnowOS Package (manager) version"
+	 exit 1
+	  ;;
+	update|upd)
+	 apt update
+	  ;;
+	purge|prg)
+	 apt purge "${@:2}"
+	  ;;
+	full-upgrade|fupg)
+	 apt full-upgrade
+	  ;;
+	upgrade|upg)
+	 apt upgrade
+	  ;;
+	list|ls)
+	 apt list ${@:2}
+	  ;;
+	reinstall|rei|reins)
+	 apt install --reinstall ${@:2}
+	  ;;
+	download|dwnd|dwlnd)
+	 apt download ${@:2}
+	  ;;
+	clean|cln)
+	 apt clean
+	  ;;
+	autoclean|aclean|acln)
+	 apt autoclean
+	  ;;
+	version|--version|-V|V|v)
+	 echo "SnowOS Package (manager) version ${SPKG_VER}"
+	  ;;
+	help)
+	 echo "SnowOS Package (manager) 1.0"
+	 echo "spkg COMMAND OPTIONS"
+	 echo "spkg install|remove|purge|update|upgrade|help|version|list|dry-run|autoremove|clean|autoclean|download"
+	*)
+	 echo "spkg: Command not found!"
+	 echo "Maybe your SnowPKG version don't have this command."
+	 exit 127
+	  ;;
+esac
