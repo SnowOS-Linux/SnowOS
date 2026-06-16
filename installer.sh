@@ -110,18 +110,18 @@ case "$UBUNTU_CODENAME" in
 	  ;;
 esac
 echo -e "${BLUE}[*]${RESET} 1/10 | Installing Python 3 (latest)"
-apt-get install python3
-apt-get install python-is-python3
+apt-get install -y python3
+apt-get install -y python-is-python3
 echo -e "${BLUE}[*]${RESET} 2/10 | Installing Zsh (latest)"
-apt-get install zsh
+apt-get install -y zsh
 echo -e "${BLUE}[*]${RESET} 3/10 Changing the Shell to zsh"
 chsh -s /usr/bin/zsh
 echo -e "${BLUE}[*]${RESET} 4/10 Installing git"
-apt-get install git
+apt-get install -y git
 echo -e "${BLUE}[*]${RESET} 5/10 Making symbolic link /usr/bin/git to /usr/bin/gt"
 ln -sf /usr/bin/git /usr/bin/gt
 echo -e "${BLUE}[*]${RESET} 6/10 Installing curl"
-apt-get install curl
+apt-get install -y curl
 echo -e "${BLUE}[*]${RESET} 7/10 Downloading file os-release from raw.githubusercontent.com"
 curl -L https://raw.githubusercontent.com/SnowOS-Linux/SnowOS/refs/heads/main/etc/os-release -o /etc/os-release
 echo -e "${BLUE}[*]${RESET} 8/10 Downloading file spkg from raw.githubusercontent.com"
@@ -138,19 +138,23 @@ read -ep "${BLUE}Your choice: ${RESET}" de
 
 case "$de" in
 	lxqt|LXQt|LXQT|Lxqt)
-	 apt-get install lubuntu-desktop
+	 apt-get install -y lubuntu-desktop
 	  ;;
 	xfce|Xfce|XFCE|Xfce4|xfce4|XFCE4)
-	 apt-get install xubuntu-desktop
+	 apt-get install -y xubuntu-desktop
 	  ;;
 	KDE|Plasma|kde|plasma|Kde|PLASMA)
-	 apt-get install kubuntu-desktop
+	 apt-get install -y kubuntu-desktop
 	  ;;
 	GNOME|Gnome|gnome|ubuntu|desktop|Ubuntu|UBUNTU)
-	 apt-get install ubuntu-desktop
+	 apt-get install -y ubuntu-desktop
 	  ;;
 	CLI|cli|Cli|No|no|NO|Tui|TUI|tui)
 	 :
+	  ;;
+	*)
+	 echo "${RED}[CE]: Invalid option!${RESET}"
+	 exit 2
 	  ;;
 esac
 echo -e "${BLUE}[*]${RESET} 9/10  Downloading Snow Mountain wallpaper"
