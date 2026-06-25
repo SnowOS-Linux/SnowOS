@@ -2,7 +2,16 @@
 SnowOS is a customization on Ubuntu Server LTS/Normal
 <img src="https://raw.githubusercontent.com/rebangkkuser/SnowOS/main/usr/share/backgrounds/SnowOS/SnowMountain.png" width="600">
 
+<p align="center">
+  <img src="https://img.shields.io/github/stars/SnowOS-Linux/SnowOS">
+  <img src="https://img.shields.io/github/forks/SnowOS-Linux/SnowOS">
+  <img src="https://img.shields.io/github/watchers/SnowOS-Linux/SnowOS">
+  <img src="https://img.shields.io/github/license/SnowOS-Linux/SnowOS">
+  <img src="https://img.shields.io/github/issues/SnowOS-Linux/SnowOS">
+  <img src="https://img.shields.io/github/v/release/SnowOS-Linux/SnowOS">
+</p>
 <sub>SnowOS Snow Mountain wallpaper from version 1.0 (2026)</sub>
+
 ## Releases
 ### SnowOS 1.0 (codename:Snowfall)
 - Ubuntu repositories
@@ -24,4 +33,10 @@ SnowOS lets you:
 - [x] Cool wallpapers
 - [x] and more 
 ## SnowOS is open source?
-Yes! SnowOS is licensed under the GNU General Public License version 3
+Yes! SnowOS is licensed under the GNU General Public License version 3, MIT, GNU General Public License version 2, GNU Affero General Public License version 3
+## Links
+If a checkbox is marked, the link is working
+- [x] [/home/tuxserver Discord](https://discord.gg/2RMYyKjJek)
+- [x] [Main GitHub git repository](https://github.com/SnowOS-Linux/SnowOS)
+## If your device don't supports Ubuntu, use Cardboard Musl/Linux instead.
+- [x] [Main Cardboard Musl/Linux GitHub git repository](https://github.com/SnowOS-Linux/CardboardLinux)
